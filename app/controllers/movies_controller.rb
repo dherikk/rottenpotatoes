@@ -10,6 +10,7 @@ class MoviesController < ApplicationController
       @all_ratings = Movie.all_ratings
       @initial = @all_ratings.to_h{|i| [i, 1]}
       @ratings_to_show = params[:ratings] || @initial
+      @test = params[:ratings]
       @movies = Movie.with_ratings(@ratings_to_show.select{|k,v| v == "1" }.keys)
     end
   
