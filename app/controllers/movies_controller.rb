@@ -7,11 +7,13 @@ class MoviesController < ApplicationController
     end
   
     def index
+      @sort_number = params[:sort].nil? ? (params[:ratings].nil? ? 1 : params[:ratings].values[0]) : params[:sort]
       @all_ratings = Movie.all_ratings
-      @initial = @all_ratings.to_h{|i| [i, 1]}
+      @initial = @all_ratings.to_h{|i| [i, @sort_number]}
       @ratings_to_show = params[:ratings] || @initial
-      @test = params[:ratings]
-      @movies = Movie.with_ratings(@ratings_to_show.select{|k,v| v == "1" }.keys)
+      @movies = Movie.with_ratings(@ratings_to_show.keys, @sort_number)
+      @movie_title_class = @sort_number == "2" ? "bg-warning hilite" : "movie_title"
+      @movie_release_class = @sort_number == "3" ? "bg-warning hilite" : "movie_rating"
     end
   
     def new
