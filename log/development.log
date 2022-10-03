@@ -4241,3 +4241,194 @@ DEPRECATION WARNING: Passing a nested array to Active Record finder methods is d
   Rendered movies/index.html.erb within layouts/application (2.6ms)
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 157.131.204.176 at 2022-10-03 00:48:11 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (4.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:12)
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'R', 'PG-13', 'PG')  ORDER BY release_date[0m
+  Rendered movies/index.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 177ms (Views: 167.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies?ratings%5BG%5D=3&ratings%5BPG%5D=3&ratings%5BPG-13%5D=3&ratings%5BR%5D=3&sort=2" for 157.131.204.176 at 2022-10-03 00:48:15 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"3", "PG"=>"3", "PG-13"=>"3", "R"=>"3"}, "sort"=>"2"}
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:10)
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R')  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies?ratings%5BG%5D=2&ratings%5BPG%5D=2&ratings%5BPG-13%5D=2&ratings%5BR%5D=2&sort=2" for 157.131.204.176 at 2022-10-03 00:48:29 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"2", "PG"=>"2", "PG-13"=>"2", "R"=>"2"}, "sort"=>"2"}
+  [1m[35m (0.1ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:10)
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R')  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?ratings%5BG%5D=2&ratings%5BPG%5D=2&ratings%5BPG-13%5D=2&ratings%5BR%5D=2&sort=2" for 157.131.204.176 at 2022-10-03 00:48:30 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"2", "PG"=>"2", "PG-13"=>"2", "R"=>"2"}, "sort"=>"2"}
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:10)
+  [1m[36mMovie Load (0.9ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R')  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=2&ratings%5BPG%5D=2&ratings%5BPG-13%5D=2&ratings%5BR%5D=2&sort=2" for 157.131.204.176 at 2022-10-03 00:48:31 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"2", "PG"=>"2", "PG-13"=>"2", "R"=>"2"}, "sort"=>"2"}
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:10)
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R')  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=2&ratings%5BR%5D=2&ratings%5BPG-13%5D=2&ratings%5BPG%5D=2&commit=Refresh" for 157.131.204.176 at 2022-10-03 00:48:32 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"2", "R"=>"2", "PG-13"=>"2", "PG"=>"2"}, "commit"=>"Refresh"}
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:10)
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'R', 'PG-13', 'PG')  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 6.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies?ratings%5BG%5D=2&ratings%5BPG%5D=2&ratings%5BPG-13%5D=2&ratings%5BR%5D=2&sort=3" for 157.131.204.176 at 2022-10-03 00:48:44 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"2", "PG"=>"2", "PG-13"=>"2", "R"=>"2"}, "sort"=>"3"}
+  [1m[35m (0.1ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:12)
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R')  ORDER BY release_date[0m
+  Rendered movies/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 157.131.204.176 at 2022-10-03 00:51:28 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:12)
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R')  ORDER BY release_date[0m
+  Rendered movies/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?ratings%5BG%5D=2&ratings%5BPG%5D=2&ratings%5BPG-13%5D=2&ratings%5BR%5D=2&sort=2" for 157.131.204.176 at 2022-10-03 00:51:30 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"2", "PG"=>"2", "PG-13"=>"2", "R"=>"2"}, "sort"=>"2"}
+  [1m[35m (0.1ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:10)
+  [1m[36mMovie Load (0.8ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R')  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 20.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=3&ratings%5BPG%5D=3&ratings%5BPG-13%5D=3&ratings%5BR%5D=3&sort=3" for 157.131.204.176 at 2022-10-03 00:51:33 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"3", "PG"=>"3", "PG-13"=>"3", "R"=>"3"}, "sort"=>"3"}
+  [1m[35m (0.1ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:12)
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R')  ORDER BY release_date[0m
+  Rendered movies/index.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?ratings%5BG%5D=2&ratings%5BPG%5D=2&ratings%5BPG-13%5D=2&ratings%5BR%5D=2&sort=2" for 157.131.204.176 at 2022-10-03 00:51:36 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"2", "PG"=>"2", "PG-13"=>"2", "R"=>"2"}, "sort"=>"2"}
+  [1m[35m (0.1ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:10)
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R')  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?ratings%5BG%5D=3&ratings%5BPG%5D=3&ratings%5BPG-13%5D=3&ratings%5BR%5D=3&sort=3" for 157.131.204.176 at 2022-10-03 00:51:37 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"3", "PG"=>"3", "PG-13"=>"3", "R"=>"3"}, "sort"=>"3"}
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:12)
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R')  ORDER BY release_date[0m
+  Rendered movies/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=3&ratings%5BR%5D=3&commit=Refresh" for 157.131.204.176 at 2022-10-03 00:51:41 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"3", "R"=>"3"}, "commit"=>"Refresh"}
+  [1m[35m (0.1ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:12)
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'R')  ORDER BY release_date[0m
+  Rendered movies/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?ratings%5BG%5D=2&ratings%5BR%5D=2&sort=2" for 157.131.204.176 at 2022-10-03 00:51:47 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"2", "R"=>"2"}, "sort"=>"2"}
+  [1m[35m (0.1ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:10)
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'R')  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=2&ratings%5BR%5D=2&commit=Refresh" for 157.131.204.176 at 2022-10-03 00:51:48 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"2", "R"=>"2"}, "commit"=>"Refresh"}
+  [1m[35m (0.1ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:10)
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'R')  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=2&ratings%5BR%5D=2&commit=Refresh" for 157.131.204.176 at 2022-10-03 00:51:50 +0000
+Cannot render console from 157.131.204.176! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"2", "R"=>"2"}, "commit"=>"Refresh"}
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT "movies"."rating" FROM "movies"
+DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and will be removed. Flatten your array before using it for 'IN' conditions. (called from with_ratings at /home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:10)
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'R')  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.3ms)
