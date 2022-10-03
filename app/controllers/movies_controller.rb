@@ -8,18 +8,18 @@ class MoviesController < ApplicationController
   
     def index
       @hehe = params
-      if(!(@hehe.has_key?(:sort) || @hehe.has_key?(:ratings)))
+      if(!(@hehe.has_key?(:ratings)))
         if(session.has_key?(:current_user_id))
           @hehe[:ratings] = session[:current_user_id]
         end
       end
-      @sort_number = @hehe[:sort].nil? ? (@hehe[:ratings].nil? ? 1 : @hehe[:ratings].values[0]) : @hehe[:sort]
+      @sort_number = @hehe[:ratings].nil? ? "none" : @hehe[:ratings].values[0]
       @all_ratings = Movie.all_ratings
       @initial = @all_ratings.to_h{|i| [i, @sort_number]}
       @ratings_to_show = @hehe[:ratings] || @initial
       @movies = Movie.with_ratings(@ratings_to_show.keys, @sort_number)
-      @movie_title_class = @sort_number == "2" ? "bg-warning hilite" : "movie_title"
-      @movie_release_class = @sort_number == "3" ? "bg-warning hilite" : "movie_rating"
+      @movie_title_class = @sort_number == "title" ? "bg-warning hilite" : "movie_title"
+      @movie_release_class = @sort_number == "release_date" ? "bg-warning hilite" : "movie_rating"
       @new_hash = @ratings_to_show.map { |k, v| [k, @sort_number] }.to_h
       session[:current_user_id] = @new_hash
     end
