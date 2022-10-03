@@ -11,6 +11,7 @@ class MoviesController < ApplicationController
       if(!(@hehe.has_key?(:ratings)))
         if(session.has_key?(:current_user_id))
           @hehe[:ratings] = session[:current_user_id]
+          redirect_to :ratings => @hehe[:ratings] and return
         end
       end
       @sort_number = @hehe[:ratings].nil? ? "none" : @hehe[:ratings].values[0]
